@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TextBox txtID;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroCliente));
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
@@ -57,17 +56,9 @@
             this.mskCEP = new System.Windows.Forms.MaskedTextBox();
             this.mskFixo = new System.Windows.Forms.MaskedTextBox();
             this.mskCelular = new System.Windows.Forms.MaskedTextBox();
-            txtID = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtID
-            // 
-            txtID.Location = new System.Drawing.Point(3, 53);
-            txtID.Name = "txtID";
-            txtID.ReadOnly = true;
-            txtID.Size = new System.Drawing.Size(63, 20);
-            txtID.TabIndex = 0;
             // 
             // txtNome
             // 
@@ -252,6 +243,7 @@
             this.tsbCancelar.Name = "tsbCancelar";
             this.tsbCancelar.Size = new System.Drawing.Size(23, 22);
             this.tsbCancelar.Text = "Cancelar";
+            this.tsbCancelar.Click += new System.EventHandler(this.tsbCancelar_Click);
             // 
             // tsbExcluir
             // 
@@ -261,6 +253,7 @@
             this.tsbExcluir.Name = "tsbExcluir";
             this.tsbExcluir.Size = new System.Drawing.Size(23, 22);
             this.tsbExcluir.Text = "Excluir";
+            this.tsbExcluir.Click += new System.EventHandler(this.tsbExcluir_Click);
             // 
             // tslBuscarPorID
             // 
@@ -270,6 +263,7 @@
             // 
             // tstID
             // 
+            this.tstID.BackColor = System.Drawing.SystemColors.Info;
             this.tstID.Name = "tstID";
             this.tstID.Size = new System.Drawing.Size(100, 25);
             // 
@@ -281,6 +275,7 @@
             this.tsbPesquisar.Name = "tsbPesquisar";
             this.tsbPesquisar.Size = new System.Drawing.Size(23, 22);
             this.tsbPesquisar.Text = "Pesquisar";
+            this.tsbPesquisar.Click += new System.EventHandler(this.tsbPesquisar_Click);
             // 
             // mskCEP
             // 
@@ -288,7 +283,7 @@
             this.mskCEP.Mask = "00000-999";
             this.mskCEP.Name = "mskCEP";
             this.mskCEP.Size = new System.Drawing.Size(79, 20);
-            this.mskCEP.TabIndex = 19;
+            this.mskCEP.TabIndex = 3;
             // 
             // mskFixo
             // 
@@ -306,12 +301,21 @@
             this.mskCelular.Size = new System.Drawing.Size(100, 20);
             this.mskCelular.TabIndex = 21;
             // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(6, 53);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(73, 20);
+            this.txtId.TabIndex = 1;
+            // 
             // FrmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(489, 232);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.mskCelular);
             this.Controls.Add(this.mskFixo);
             this.Controls.Add(this.mskCEP);
@@ -330,7 +334,6 @@
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(txtID);
             this.ForeColor = System.Drawing.Color.Teal;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroCliente";
@@ -372,6 +375,7 @@
         private System.Windows.Forms.MaskedTextBox mskCEP;
         private System.Windows.Forms.MaskedTextBox mskFixo;
         private System.Windows.Forms.MaskedTextBox mskCelular;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
 
